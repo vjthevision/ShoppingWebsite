@@ -1,0 +1,135 @@
+{% load static %} {% static "images" as baseUrl %}
+<!DOCTYPE html>
+<html lang="en">
+  <title>Contact</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Montserrat"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+  <style>
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: "Lato", sans-serif;
+    }    
+.box{
+	background: rgba(255, 255, 255, 0.15);
+	padding:15px;
+    margin-bottom:20px;
+    
+}
+.map iframe {
+    width: 100%;
+    min-height: 23em;
+    border: none;
+}
+.w3-bar,h1,button {
+      font-family: "Montserrat", sans-serif;
+    }
+.fa-credit-card-alt {
+      font-size: 200px;
+    }
+#button {
+      text-align: center;
+    }
+</style>
+
+<body bgcolor="#EEA47FFF">
+    <!-- NavBar -->
+    <div class="w3-top">
+      <div class="w3-bar" id="myNavbar">
+        <a
+          class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right"
+          href="javascript:void(0);"
+          onclick="toggleFunction()"
+          title="Toggle Navigation Menu"
+        >
+          <i class="fa fa-bars"></i>
+        </a>
+        <a href="./home" class="w3-bar-item w3-button">HOME</a>
+        <a href="./about" class="w3-bar-item w3-button w3-hide-small"
+          ><i class="fa fa-user"></i> ABOUT</a
+        >
+        {% if user.is_authenicated %}
+        <a href="" class="w3-bar-item w3-button w3-hide-small">Welcome, {{ user.first_name }}</a>
+        <a href="logout" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> LOGOUT</a>
+        {% else %}
+        <a href="login" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> LOGIN</a>
+        <a href="register" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user-plus"></i> REGISTER</a>
+        {% endif %}
+        <a
+          href="search"
+          class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-blue"
+        >
+          <i class="fa fa-search"></i>
+        </a>
+      </div>
+    </div>
+    <!-- End of NavBar -->
+
+    <!-- Header -->
+    <header class="w3-container w3-blue w3-center" style="padding:128px 16px">
+      <h1 class="w3-margin w3-jumbo">Contact Us</h1>
+    </header>
+
+<div class="w3-display-container w3-margin-left" style="padding:150px ">
+    <div class="w3-cell-row">
+    <div class="w3-container w3-cell"></div>
+    <div class="box">
+        <h3>Name</h3>
+        <input type="text" name="name" class="name" placeholder="Name" required="">
+    </div>
+    <div class="box">
+        <h3>Company</h3>
+        <input type="text" name="company" class="company" placeholder="Comapany Name" required="">
+    </div>
+    <div class="box">
+        <h3>Telephone</h3>
+        <input type="decimal" name="telephone" class="telephone" placeholder="Telephone" required="">
+    </div>
+    <div class="box">
+        <h3>Email</h3>
+        <input type="email" name="email" class="email" placeholder="Email-id" required="">
+    </div>
+    <div class="box">
+        <h3>Message</h3>
+        <textarea name="your message" placeholder="your message here" required=""></textarea>
+    </div>
+    <input type="submit" value="Send Message">
+    </form>
+    
+<div class="w3-container w3-cell w3-margin-left">
+<h3>Subscribe</h3>
+    <form action="#" method="post">
+        <div class="box">
+            <h3>Email Address</h3>
+            <input type="email" name="email-id" class="email_id" placeholder="Email-id" required="">
+        </div>
+        <input type="submit" class="subscribe" value="Subscribe">
+    </form>
+    <h3>Our Location</h3>
+    <div class="agile">
+        <h3>Reach Us</h3>
+        <div class="map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3903.281545193191!2d79.82606213597712!3d11.954998593820067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a53616075b19e49%3A0xb1c4246f0066959!2sKaruvadikuppam+Public+Electric+Crematorium!5e0!3m2!1sen!2sin!4v1561446238837!5m2!1sen!2sin"
+                width="400" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+  </body>
+</html>
